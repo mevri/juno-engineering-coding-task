@@ -1,6 +1,7 @@
-import logo from '../logo.svg';
+
 import './App.css';
 import ImageCarousel from "./ImageCarousel";
+import *  as ragac from '../task2/ecommerce'
 
 function App() {
   return (

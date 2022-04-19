@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.carousel-wrapper-content {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  justify-content: center;
+}
+
+.carousel-wrapper-content img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+

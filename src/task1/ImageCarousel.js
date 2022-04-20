@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { fetchImageUrls } from "../api/index";
-import IconButtons from "./IconButtons";
-import CircularProgress from '@mui/material/CircularProgress'
+import EmptyState from "./EmptyState";
+import CarouselContent from "./CarouselContent";
+
 
 const ImageCarousel = () => {
     const [images, setImages] = useState([])
@@ -50,15 +51,16 @@ const ImageCarousel = () => {
 
     return (
         <div className="carousel-wrapper">
-            <IconButtons handleClick={prevSlide} direction='left' loading={loading} />
-            <div className="carousel-wrapper-content">
-                {
-                    loading ?
-                        <CircularProgress /> :
-                        <img src={images[currentIndex]} alt=""/>
-                }
-            </div>
-            <IconButtons handleClick={nextSlide} direction='right' loading={loading} />
+            {
+                !loading && !images.length
+                    ? <EmptyState />
+                    : <CarouselContent
+                        prevSlide={prevSlide}
+                        nextSlide={nextSlide}
+                        loading={loading}
+                        image={images[currentIndex]}
+                    />
+            }
 
         </div>
     )
